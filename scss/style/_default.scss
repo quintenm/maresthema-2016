@@ -1,0 +1,81 @@
+.img-full-width
+{
+  width:100%;
+}
+//parallax of top image
+.parallax-container
+{
+  width:100%;
+}
+.parallax-image
+{
+  background-position: 50% 0%;
+  background-attachment: fixed;
+}
+.section
+{
+  padding:80px 0;
+  box-sizing: border-box;
+
+  &:not(.section-except)
+  {
+    min-height: 80vh;
+  }
+  &.header
+  {
+    padding:0;
+    h1
+    {
+      margin-top:0;
+      &.slogan
+      {
+        font-size: floor(($font-size-base * 3.4285714286)); //48px
+      }
+    }
+    p
+    {
+      font-size: floor(($font-size-base * 1.5)) //21px
+    }
+    &-items
+    {
+      h2
+      {
+        text-align: center;
+      }
+    }
+  }
+  &-title
+  {
+    padding:40px 0;
+  }
+  &-articles .section:nth-of-type(even)
+  {
+    background-color: lighten($gray-lighter, 4%);
+  }
+}
+//offset for section-articles button
+.btn-offset
+{
+  margin:50px auto 80px auto;
+}
+//carrousel styling
+.carousel-inner>.item>img, .carousel-inner>.item>a>img
+{
+  height:auto;
+  width: 100%;
+
+}
+.footer
+{
+  background-color: $panel-footer-bg;
+}
+.cutout
+{
+  position:relative;
+  top:-40px;
+}
+
+#company-carousel
+{
+  background-color: $brand-primary;
+}
