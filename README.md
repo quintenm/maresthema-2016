@@ -1,12 +1,12 @@
 # maresthema-2016
-wordpress thema onder bouw
+wordpress thema build
 
-onepage parallax met sub bibliotheken artikels.
+onepage parallax with sub library articles
 
-## thema bibliotheken
+## thema libraries
 * jQuery
-* Bootstrap (js en css)
-* Font Awesome
+* bootstrap (js and css)
+* font awesome
 * parallax (bootstrap)
 * Sass (scss > css)
 
@@ -18,7 +18,12 @@ onepage parallax met sub bibliotheken artikels.
 * font awesome
 * Open Sans
 
-
-#future
 ## css
 * company image: image option for convert to white.
+
+## other
+* quote optimalisation.
+
+#future
+* optimalisation pages
+* compressing theme
