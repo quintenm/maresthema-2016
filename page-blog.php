@@ -51,4 +51,3 @@
 
 
 <?php get_footer(); ?>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at dolore excepturi incidunt ipsum maiores provident quaerat, quas voluptatibus. Dignissimos excepturi, id minus natus rem velit. Atque culpa hic perferendis.

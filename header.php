@@ -27,7 +27,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-sm" href="<?php echo get_site_url(); ?>"><img class="logo" src="http://groep.mares.be/wp-content/uploads/2015/05/logo-224x70.png" alt="<?php bloginfo( 'name' ); ?>" scale="0" width="150px"></a>
+            <?php if(get_theme_mod('instellingen_logo')): ?>
+            <a class="navbar-brand hidden-sm" href="<?php echo get_site_url(); ?>"><img class="logo" src="<?php echo get_theme_mod('instellingen_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>" scale="0" width="150px"></a>
+            <?php endif; ?>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,6 +66,8 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <?php
+                    $facebook_url = get_theme_mod('instellingen_fb');
+                    $twitter_url = get_theme_mod('instellingen_tw');
                     if($facebook_url):
                 ?>
                     <li class="col-xs-4 hidden-sm hidden-md hidden-lg text-center"><a href="<?php echo $facebook_url; ?>"><i class="fa fa-facebook"></i></a></li>
@@ -84,16 +88,16 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="container">
-                            <form class="navbar-form row" id="search" role="search">
-                                <div class="col-xs-12 col-sm-8 col-md-10">
-                                    <input type="text" class="form-control " placeholder="Search">
-                                </div>
-                                <div class="col-xs-6 col-sm-2 col-md-1">
-                                    <button type="submit" class="btn btn-default form-control">Search</button>
 
+                            <form  id="search" role="search" method="get" class="search-form navbar-form row" action="<?php echo home_url( '/' ); ?>">
+                                <div class="col-xs-8 col-sm-9 col-md-10">
+                                    <input type="search" class="search-field form-control"
+                                           placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+                                           value="<?php echo get_search_query() ?>" name="s"
+                                           title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
                                 </div>
-                                <div class="col-xs-6 col-sm-2 col-md-1">
-                                    <button type="reset" class="btn btn-default form-control">Cancel</button>
+                                <div class="col-xs-4 col-sm-3 col-md-2">
+                                    <button type="submit" class="search-submit btn btn-primary form-control"><?php echo esc_attr_x( 'Search', 'submit button' ) ?></button>
                                 </div>
                             </form>
                         </li>

@@ -54,8 +54,6 @@ include_once( dirname( __FILE__ ) . '/includes/wp-bootstrap-navwalker/wp_bootstr
 include_once( dirname( __FILE__ ) . '/includes/function_widgets.php' );
 
 
-
-
 include_once( dirname( __FILE__ ) . '/includes/kirki/kirki.php' );
 
 function mytheme_kirki_configuration() {
@@ -68,5 +66,35 @@ add_filter( 'kirki/fields', 'mytheme_kirki_fields' );
 
 add_action( 'widgets_init', 'all_widget_init' );
 
+/**
+ * Add HTML5 theme support.
+ */
+function wpdocs_after_setup_theme() {
+    add_theme_support( 'html5', array( 'search-form' ) );
+}
 
+
+
+
+
+function mt_include_content($pid) {
+    $thepageinquestion = get_post($pid);
+    $content = $thepageinquestion->post_content;
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]>', $content);
+    echo $content;
+}
+
+function mt_add_quicktags() {
+if (wp_script_is('quicktags')) {
+    ?>
+    <script type="text/javascript">
+        QTags.addButton('quote', 'quote-mares', '<div class="mares-quote"><blockquote><p>', '</p></blockquote><p>Naam Voornaam</p></div>', '', '', 990);
+    </script>
+    <?php
+}
+}
+
+add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );
+add_action( 'admin_print_footer_scripts', 'mt_add_quicktags' );
 ?>

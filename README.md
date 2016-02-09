@@ -17,3 +17,8 @@ onepage parallax met sub bibliotheken artikels.
 * glyphicon (bootstrap)
 * font awesome
 * Open Sans
+
+
+#future
+## css
+* company image: image option for convert to white.

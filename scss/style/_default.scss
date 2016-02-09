@@ -19,11 +19,23 @@
 
   &:not(.section-except)
   {
-    min-height: 80vh;
+    min-height: 40vh;
+  }
+  &.footer
+  {
+    padding-bottom: 0;
+
+    .company-data
+    {
+      padding:80px 0;
+    }
   }
   &.header
   {
     padding:0;
+    z-index: 4;
+    position: relative;
+    padding-top:60px;
     h1
     {
       margin-top:0;
@@ -71,11 +83,102 @@
 }
 .cutout
 {
-  position:relative;
-  top:-40px;
+  position: relative;
+  .cut {
+    position:absolute;
+    top:-50px;
+    background-color: white;
+    z-index: 3;
+    height:120px;
+  }
+  .col-lg-12
+  {
+    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 56% 0, 50% 30%, 44% 0);
+    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+  }
+  .col-md-12
+  {
+    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 56% 0, 50% 30%, 44% 0);
+    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+  }
+  .col-sm-12
+  {
+    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 58% 0, 50% 30%, 42% 0);
+    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+  }
+  .col-xs-12
+  {
+    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 60% 0, 50% 30%, 40% 0);
+    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+  }
 }
 
 #company-carousel
 {
   background-color: $brand-primary;
+  img.white_overlay {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+}
+
+$blockquote-number: 30px;
+.mares-quote
+{
+  margin: 25px auto;
+  blockquote
+  {
+    background-color: #dddbe1;
+
+    padding:$blockquote-number;
+    box-sizing: border-box;
+    border:none;
+    position:relative;
+    quotes: "\201C""\201D";
+    p {
+      display: inline;
+    }
+    &:before
+    {
+      content: open-quote;
+      font-size: 4em;
+      margin-left:  - $blockquote-number / 2 ;
+      line-height: 0.1em;
+      margin-right: $blockquote-number / 4;
+      vertical-align: -0.4em;
+      font-family: Serif;
+    }
+    &:after
+    {
+      background-color: #dddbe1;
+      content: "\00a0";
+      display: block;
+      height: 40px;
+      width:  40px;
+      position: absolute;
+      bottom: -18px;
+      left: 39px;
+      transform:             rotate( 27deg ) skew( -35deg );
+      -moz-transform:    rotate( 27deg ) skew( -35deg );
+      -ms-transform:     rotate( 27deg ) skew( -35deg );
+      -o-transform:      rotate( 27deg ) skew( -35deg );
+      -webkit-transform: rotate( -45deg ) skew( 0deg );
+    }
+  }
+  p
+  {
+    margin-top:40px;
+  }
+  &:nth-of-type(2n)
+  {
+    blockquote:after
+    {
+      left: auto;
+      right: 39px;
+    }
+    p
+    {
+      text-align: right;
+    }
+  }
 }

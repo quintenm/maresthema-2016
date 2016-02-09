@@ -1,6 +1,11 @@
 <?php
-    get_header();
-
+<?php
+/*
+Template Name: Search Page
+*/
+?>
+get_header();
+get_search_form();
 $postlist = get_posts( 'orderby=menu_order&sort_order=asc' );
 $posts = array();
 foreach ( $postlist as $post ) {

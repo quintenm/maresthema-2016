@@ -119,6 +119,46 @@ function mytheme_kirki_sections( $wp_customize ) {
         'panel'       => 'company_slider',
     ) );
 
+
+    $wp_customize->add_panel( 'hightlighted_article', array(
+        'priority'    => 200,
+        'title'       => __( 'Uitgelichte artikels', 'kirki' ),
+    ) );
+
+    $wp_customize->add_section( 'hightlighted_article_area_01', array(
+        'title'       => __( 'Gebied 1', 'kirki' ),
+        'priority'    => 10,
+        'panel'       => 'hightlighted_article',
+    ) );
+    $wp_customize->add_section( 'hightlighted_article_area_02', array(
+        'title'       => __( 'Gebied 2', 'kirki' ),
+        'priority'    => 20,
+        'panel'       => 'hightlighted_article',
+    ) );
+    $wp_customize->add_section( 'hightlighted_article_area_03', array(
+        'title'       => __( 'Gebied 3', 'kirki' ),
+        'priority'    => 30,
+        'panel'       => 'hightlighted_article',
+    ) );
+    $wp_customize->add_section( 'hightlighted_article_area_04', array(
+        'title'       => __( 'Gebied 4', 'kirki' ),
+        'priority'    => 40,
+        'panel'       => 'hightlighted_article',
+    ) );
+
+
+
+    $wp_customize->add_section( 'contactform', array(
+        'title'       => __( 'Contact formulier', 'kirki' ),
+        'priority'    => 220,
+    ) );
+
+
+    $wp_customize->add_section( 'instellingen', array(
+        'title'       => __( 'Instellingen', 'kirki' ),
+        'priority'    => 230,
+    ) );
+
 }
 add_action( 'customize_register', 'mytheme_kirki_sections' );
 
@@ -251,6 +291,16 @@ function mytheme_kirki_fields( $fields ) {
         'default'     => '',
         'priority'    => 7,
     );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'header_site_url01_url',
+        'label'       => __( 'Url', 'kirki' ),
+        'help'        => __( 'Url naar pagina', 'kirki' ),
+        'default'     => __( '', 'kirki' ),
+        'section'     => 'header_site_url01',
+        'default'     => '',
+        'priority'    => 8,
+    );
 
 
     // header url 2
@@ -295,6 +345,16 @@ function mytheme_kirki_fields( $fields ) {
         'default'     => '',
         'priority'    => 7,
     );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'header_site_url02_url',
+        'label'       => __( 'Url', 'kirki' ),
+        'help'        => __( 'Url naar pagina', 'kirki' ),
+        'default'     => __( '', 'kirki' ),
+        'section'     => 'header_site_url02',
+        'default'     => '',
+        'priority'    => 8,
+    );
 
     // header url 3
     $fields[] = array(
@@ -338,6 +398,16 @@ function mytheme_kirki_fields( $fields ) {
         'default'     => '',
         'priority'    => 7,
     );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'header_site_url03_url',
+        'label'       => __( 'Url', 'kirki' ),
+        'help'        => __( 'Url naar pagina', 'kirki' ),
+        'default'     => __( '', 'kirki' ),
+        'section'     => 'header_site_url03',
+        'default'     => '',
+        'priority'    => 8,
+    );
 
     // header url 4
     $fields[] = array(
@@ -380,6 +450,16 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'header_site_url04',
         'default'     => '',
         'priority'    => 7,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'header_site_url04_url',
+        'label'       => __( 'Url', 'kirki' ),
+        'help'        => __( 'Url naar pagina', 'kirki' ),
+        'default'     => __( '', 'kirki' ),
+        'section'     => 'header_site_url04',
+        'default'     => '',
+        'priority'    => 8,
     );
 
 
@@ -712,6 +792,18 @@ function mytheme_kirki_fields( $fields ) {
 
     // logo slider
     $fields[] = array(
+    'type'        => 'switch',
+        'settings'    => 'company_slider_logo_001_switch',
+        'label'       => __( 'afbeelding 1 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+        'on'  => __( 'Aan', 'kirki' ),
+        'off' => __( 'Uit', 'kirki' ),
+    ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_001',
         'label'       => __( 'Slider afbeelding 1', 'kirki' ),
@@ -719,6 +811,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_002_switch',
+        'label'       => __( 'afbeelding 2 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -730,6 +834,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_003_switch',
+        'label'       => __( 'afbeelding 3 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_003',
         'label'       => __( 'Slider afbeelding 3', 'kirki' ),
@@ -737,6 +853,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_004_switch',
+        'label'       => __( 'afbeelding 4 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -748,6 +876,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_005_switch',
+        'label'       => __( 'afbeelding 5 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_005',
         'label'       => __( 'Slider afbeelding 5', 'kirki' ),
@@ -755,6 +895,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_006_switch',
+        'label'       => __( 'afbeelding 6 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -766,6 +918,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_007_switch',
+        'label'       => __( 'afbeelding 7 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_007',
         'label'       => __( 'Slider afbeelding 7', 'kirki' ),
@@ -773,6 +937,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_008_switch',
+        'label'       => __( 'afbeelding 8 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -784,6 +960,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_009_switch',
+        'label'       => __( 'afbeelding 9 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_009',
         'label'       => __( 'Slider afbeelding 9', 'kirki' ),
@@ -791,6 +979,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0010_switch',
+        'label'       => __( 'afbeelding 10 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -802,6 +1002,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0011_switch',
+        'label'       => __( 'afbeelding 11 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_0011',
         'label'       => __( 'Slider afbeelding 11', 'kirki' ),
@@ -809,6 +1021,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0012_switch',
+        'label'       => __( 'afbeelding 12 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -820,6 +1044,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0013_switch',
+        'label'       => __( 'afbeelding 13 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_0013',
         'label'       => __( 'Slider afbeelding 13', 'kirki' ),
@@ -827,6 +1063,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0014_switch',
+        'label'       => __( 'afbeelding 14 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -838,6 +1086,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0015_switch',
+        'label'       => __( 'afbeelding 15 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_0015',
         'label'       => __( 'Slider afbeelding 16', 'kirki' ),
@@ -845,6 +1105,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0016_switch',
+        'label'       => __( 'afbeelding 16 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -856,6 +1128,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0017_switch',
+        'label'       => __( 'afbeelding 17 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_0017',
         'label'       => __( 'Slider afbeelding 17', 'kirki' ),
@@ -863,6 +1147,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0018_switch',
+        'label'       => __( 'afbeelding 18 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -874,6 +1170,18 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 10,
     );
     $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0019_switch',
+        'label'       => __( 'afbeelding 19 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
         'type'        => 'image',
         'settings'    => 'company_slider_logo_0019',
         'label'       => __( 'Slider afbeelding 19', 'kirki' ),
@@ -881,6 +1189,18 @@ function mytheme_kirki_fields( $fields ) {
         'section'     => 'company_slider_logo',
         'default'     => '',
         'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'company_slider_logo_0020_switch',
+        'label'       => __( 'afbeelding 20 witte overlay', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'default'     => '0',
+        'priority'    => 10,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
     );
     $fields[] = array(
         'type'        => 'image',
@@ -891,6 +1211,10 @@ function mytheme_kirki_fields( $fields ) {
         'default'     => '',
         'priority'    => 10,
     );
+
+
+
+
     $fields[] = array(
         'type'        => 'text',
         'settings'    => 'company_slider_settings_duration',
@@ -913,47 +1237,264 @@ function mytheme_kirki_fields( $fields ) {
 
 
 
+    // uitgelichte gebied 1
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'hightlighted_article_area_01_switch',
+        'label'       => __( 'Sectie pagina', 'kirki' ),
+        'section'     => 'hightlighted_article_area_01',
+        'default'     => '0',
+        'priority'    => 9,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_01_id',
+        'label'       => __( 'Pagina id', 'kirki' ),
+        'help'        => __( 'Pagina id van pagina met template block op startpagina, toont content van pagina in gebied', 'kirki' ),
+        'section'     => 'hightlighted_article_area_01',
+        'default'     => '38',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_01_menu_id',
+        'label'       => __( 'menu id', 'kirki' ),
+        'help'        => __( 'behoort tot menu voor scrolling: bv Graphic & Web met url #graphic plaats hier dan \'graphic\'', 'kirki' ),
+        'section'     => 'hightlighted_article_area_01',
+        'default'     => 'graphic',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_01_button',
+        'label'       => __( 'Pagina knop tekst', 'kirki' ),
+        'help'        => __( 'Knop tekst', 'kirki' ),
+        'section'     => 'hightlighted_article_area_01',
+        'default'     => 'Ga naar de ...',
+        'priority'    => 11,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_01_url',
+        'label'       => __( 'Pagina knop link', 'kirki' ),
+        'help'        => __( 'Knop url http://www.mares.be/', 'kirki' ),
+        'section'     => 'hightlighted_article_area_01',
+        'default'     => '#',
+        'priority'    => 12,
+    );
+    // uitgelichte gebied 2
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'hightlighted_article_area_02_switch',
+        'label'       => __( 'Sectie pagina', 'kirki' ),
+        'section'     => 'hightlighted_article_area_02',
+        'default'     => '0',
+        'priority'    => 9,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_02_id',
+        'label'       => __( 'Pagina id', 'kirki' ),
+        'help'        => __( 'Pagina id van pagina met template block op startpagina, toont content van pagina in gebied', 'kirki' ),
+        'section'     => 'hightlighted_article_area_02',
+        'default'     => '38',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_02_menu_id',
+        'label'       => __( 'menu id', 'kirki' ),
+        'help'        => __( 'behoort tot menu voor scrolling: bv Graphic & Web met url #graphic plaats hier dan \'graphic\'', 'kirki' ),
+        'section'     => 'hightlighted_article_area_02',
+        'default'     => 'graphic',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_02_button',
+        'label'       => __( 'Pagina knop tekst', 'kirki' ),
+        'help'        => __( 'Knop tekst', 'kirki' ),
+        'section'     => 'hightlighted_article_area_02',
+        'default'     => 'Ga naar de ...',
+        'priority'    => 11,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_02_url',
+        'label'       => __( 'Pagina knop link', 'kirki' ),
+        'help'        => __( 'Knop url http://www.mares.be/', 'kirki' ),
+        'section'     => 'hightlighted_article_area_02',
+        'default'     => '#',
+        'priority'    => 12,
+    );
+    // uitgelichte gebied 3
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'hightlighted_article_area_03_switch',
+        'label'       => __( 'Sectie pagina', 'kirki' ),
+        'section'     => 'hightlighted_article_area_03',
+        'default'     => '0',
+        'priority'    => 9,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_03_id',
+        'label'       => __( 'Pagina id', 'kirki' ),
+        'help'        => __( 'Pagina id van pagina met template block op startpagina, toont content van pagina in gebied', 'kirki' ),
+        'section'     => 'hightlighted_article_area_03',
+        'default'     => '38',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_03_menu_id',
+        'label'       => __( 'menu id', 'kirki' ),
+        'help'        => __( 'behoort tot menu voor scrolling: bv Graphic & Web met url #graphic plaats hier dan \'graphic\'', 'kirki' ),
+        'section'     => 'hightlighted_article_area_03',
+        'default'     => 'graphic',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_03_button',
+        'label'       => __( 'Pagina knop tekst', 'kirki' ),
+        'help'        => __( 'Knop tekst', 'kirki' ),
+        'section'     => 'hightlighted_article_area_03',
+        'default'     => 'Ga naar de ...',
+        'priority'    => 11,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_03_url',
+        'label'       => __( 'Pagina knop link', 'kirki' ),
+        'help'        => __( 'Knop url http://www.mares.be/', 'kirki' ),
+        'section'     => 'hightlighted_article_area_03',
+        'default'     => '#',
+        'priority'    => 12,
+    );
+    // uitgelichte gebied 4
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'hightlighted_article_area_04_switch',
+        'label'       => __( 'Sectie pagina', 'kirki' ),
+        'section'     => 'hightlighted_article_area_04',
+        'default'     => '0',
+        'priority'    => 9,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_04_id',
+        'label'       => __( 'Pagina id', 'kirki' ),
+        'help'        => __( 'Pagina id van pagina met template block op startpagina, toont content van pagina in gebied', 'kirki' ),
+        'section'     => 'hightlighted_article_area_04',
+        'default'     => '38',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_04_menu_id',
+        'label'       => __( 'menu id', 'kirki' ),
+        'help'        => __( 'behoort tot menu voor scrolling: bv Graphic & Web met url #graphic plaats hier dan \'graphic\'', 'kirki' ),
+        'section'     => 'hightlighted_article_area_04',
+        'default'     => 'graphic',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_04_button',
+        'label'       => __( 'Pagina knop tekst', 'kirki' ),
+        'help'        => __( 'Knop tekst', 'kirki' ),
+        'section'     => 'hightlighted_article_area_04',
+        'default'     => 'Ga naar de ...',
+        'priority'    => 11,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'hightlighted_article_area_04_url',
+        'label'       => __( 'Pagina knop link', 'kirki' ),
+        'help'        => __( 'Knop url http://www.mares.be/', 'kirki' ),
+        'section'     => 'hightlighted_article_area_04',
+        'default'     => '#',
+        'priority'    => 12,
+    );
 
 
-//    $fields[] = array(
-//        'type'        => 'background',
-//        'settings'    => 'body_background',
-//        'label'       => __( 'Choose the background for the main area', 'kirki' ),
-//        'description' => __( 'The header background you specify here will apply to the main area of your site.', 'kirki' ),
-//        'section'     => 'main_background',
-//        'default'     => array(
-//            'color'    => 'rgba(255,255,255,1)',
-//            'image'    => '',
-//            'repeat'   => 'no-repeat',
-//            'size'     => 'cover',
-//            'attach'   => 'fixed',
-//            'position' => 'left-top',
-//        ),
-//        'priority'    => 10,
-//        'output'      => '#content'
-//    );
 
-//    $fields[] = array(
-//        'type'        => 'background',
-//        'settings'    => 'footer_background',
-//        'label'       => __( 'Choose the background for your footer', 'kirki' ),
-//        'description' => __( 'If you choose to use an image then please use a blurry image so that it does not distract users from the widgets you have on your footer..', 'kirki' ),
-//        'section'     => 'footer_background',
-//        'default'     => array(
-//            'color'    => 'rgba(255,255,255,1)',
-//            'image'    => '',
-//            'attach'   => 'fixed',
-//        ),
-//        'priority'    => 10,
-//        'output'      => '#content'
-//    );
+    // contact form
+    $fields[] = array(
+        'type'        => 'switch',
+        'settings'    => 'contactform_switch',
+        'label'       => __( 'Contact formulier', 'kirki' ),
+        'section'     => 'contactform',
+        'default'     => '0',
+        'priority'    => 9,
+        'choices'     => array(
+            'on'  => __( 'Aan', 'kirki' ),
+            'off' => __( 'Uit', 'kirki' ),
+        ),
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'contactform_id',
+        'label'       => __( 'Contact formulier id', 'kirki' ),
+        'help'        => __( 'Contact formulier van Contact form 7 en flamingo', 'kirki' ),
+        'section'     => 'contactform',
+        'default'     => '',
+        'priority'    => 10,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'contactform_Titel',
+        'label'       => __( 'Contact formulier Titel', 'kirki' ),
+        'help'        => __( '', 'kirki' ),
+        'section'     => 'contactform',
+        'default'     => '',
+        'priority'    => 10,
+    );
 
+
+
+    // instellingen
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'instellingen_fb',
+        'label'       => __( 'Facebook url', 'kirki' ),
+        'help'        => __( 'https://www.facebook.com/StudioMares/', 'kirki' ),
+        'section'     => 'instellingen',
+        'default'     => '',
+        'priority'    => 1,
+    );
+    $fields[] = array(
+        'type'        => 'text',
+        'settings'    => 'instellingen_tw',
+        'label'       => __( 'Twitter url', 'kirki' ),
+        'help'        => __( 'https://twitter.com/studiomares', 'kirki' ),
+        'section'     => 'instellingen',
+        'default'     => '',
+        'priority'    => 2,
+    );
     $fields[] = array(
         'type'        => 'select',
         'setting'     => 'font_family',
         'label'       => __( 'Font-Family', 'kirki' ),
         'description' => __( 'Please choose a font for your site. This font-family will be applied to all elements on your page, including headers and body.', 'kirki' ),
-        'section'     => 'font',
+        'section'     => 'instellingen',
         'default'     => 'Roboto',
         'priority'    => 10,
         'choices'     => Kirki_Fonts::get_font_choices(),
@@ -978,7 +1519,7 @@ function mytheme_kirki_fields( $fields ) {
         'setting'     => 'font_size',
         'label'       => __( 'Font-Size', 'kirki' ),
         'description' => __( 'Please choose a font-size for your body.', 'kirki' ),
-        'section'     => 'font',
+        'section'     => 'instellingen',
         'default'     => 1,
         'priority'    => 20,
         'choices'     => array(
@@ -1001,6 +1542,25 @@ function mytheme_kirki_fields( $fields ) {
                 'property' => 'font-size',
             ),
         ),
+    );
+    $fields[] = array(
+        'type'        => 'editor',
+        'settings'    => 'instellingen_adress',
+        'label'       => __( 'Adress gegevens', 'kirki' ),
+        'help'        => __( 'Opmaak is toegestaan', 'kirki' ),
+        'default'     => __( '', 'kirki' ),
+        'section'     => 'instellingen',
+        'default'     => '',
+        'priority'    => 3,
+    );
+    $fields[] = array(
+        'type'        => 'image',
+        'settings'    => 'instellingen_logo',
+        'label'       => __( 'Logo site', 'kirki' ),
+        'help'        => __( 'logo 224x70', 'kirki' ),
+        'section'     => 'instellingen',
+        'default'     => '',
+        'priority'    => 0,
     );
 
     return $fields;
