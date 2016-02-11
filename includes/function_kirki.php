@@ -1563,5 +1563,25 @@ function mytheme_kirki_fields( $fields ) {
         'priority'    => 0,
     );
 
+    $fields[] = array(
+        'type'        => 'repeater',
+        'label'       => esc_attr__( 'Repeater Control', 'kirki' ),
+        'description' => esc_attr__( 'The "repeater" control allows you to create rows of data and you can define the fields that the rows will use. Valide field-types are: text, checkbox, radio, select, textarea. The data is saves as a multi-dimentional array.' ),
+        'help'        => esc_attr__( 'This is a tooltip', 'kirki-demo' ),
+        'section'     => 'instellingen',
+        'priority'    => 10,
+        'settings'    => 'repeater_demo',
+
+        fields => array(
+            'link_text' => array(
+                'type'        => 'text',
+//                'settings'    => 'repeater_demo_text',
+                'label'       => __( 'Facebook url', 'kirki' ),
+                'help'        => __( 'https://www.facebook.com/StudioMares/', 'kirki' ),
+                'default'     => '',
+            ),
+        )
+    ) ;
+
     return $fields;
 }

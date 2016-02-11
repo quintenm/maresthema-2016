@@ -21,7 +21,7 @@ get_header(); ?>
         <?php wp_list_categories(); ?>
     </ul>
     <!-- Einde archief functies -->
-
+test
     </div> <!-- content end -->
 <?php get_sidebar(); ?>
     </div> <!-- container end -->

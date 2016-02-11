@@ -8,7 +8,7 @@
 ?>
 <?php if(get_theme_mod('header_image')){ ?>
 <div>
-    <div class="container-fluid container-height">
+    <div class="container-fluid container-height container-top">
         <div class="row container-height">
             <?php $theme_parallax = get_option('theme_parallax'); ?>
             <div class="parallax-container container-height"
