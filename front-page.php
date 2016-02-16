@@ -339,87 +339,20 @@
         <div class="col-xs-12" style="padding-top:<?php echo get_theme_mod('company_slider_settings_padding'); ?>; padding-bottom:<?php echo get_theme_mod('company_slider_settings_padding'); ?>;">
              <div class="carousel carousel-showsixmoveone slide" data-ride="carousel" data-interval="<?php echo get_theme_mod('company_slider_settings_duration'); ?>">
                  <div class="carousel-inner">
-                     <?php if(get_theme_mod('company_slider_logo_001')): ?>
-                     <div class="item active">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_001'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_001_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_002')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_002'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_002_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_003')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_003'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_003_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_004')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_004'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_004_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_005')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_005'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_005_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_006')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_006'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_006_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php endif; if(get_theme_mod('company_slider_logo_007')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_007'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_007_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_008')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_008'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_008_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_009')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_009'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_009_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0010')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0010'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0010_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0011')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0011'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0011_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0012')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0012'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0012_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0013')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0013'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0013_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0014')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0014'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0014_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0015')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0015'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0015_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0016')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0016'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0016_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0017')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0017'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0017_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0018')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0018'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0018_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0019')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0019'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0019_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php if(get_theme_mod('company_slider_logo_0020')): ?>
-                     <div class="item">
-                         <div class="col-xs-4 col-sm-4 col-md-2"><a href="#"><img src="<?php echo get_theme_mod('company_slider_logo_0020'); ?>" class="img-responsive <?php if(get_theme_mod('company_slider_logo_0020_switch')){ echo 'white_overlay';} ?>"></a></div>
-                     </div>
-                     <?php endif;  endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; endif; ?>
+                     <?php
+                        $repeater_value = get_theme_mod( 'company_slider_logo_image');
+                        $first_image = "0";
+                        foreach ( $repeater_value as $row ) : $first_image++; ?>
+                        <div class="item <?php if($first_image == "1"){ echo 'active'; } ?>">
+                            <div class="col-xs-4 col-sm-4 col-md-2">
+                                <a href="#">
+                                    <img src="<?php echo esc_url_raw( $row['image_url'] ); ?>" class="img-responsive <?php if($row['image_switch'] == true){ echo 'white_overlay';} ?>">
+                                </a>
+                            </div>
+                        </div>
+                     <?php endforeach; ?>
+
+
                  </div>
              </div>
         </div>

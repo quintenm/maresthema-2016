@@ -790,430 +790,6 @@ function mytheme_kirki_fields( $fields ) {
 
 
 
-    // logo slider
-    $fields[] = array(
-    'type'        => 'switch',
-        'settings'    => 'company_slider_logo_001_switch',
-        'label'       => __( 'afbeelding 1 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-        'on'  => __( 'Aan', 'kirki' ),
-        'off' => __( 'Uit', 'kirki' ),
-    ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_001',
-        'label'       => __( 'Slider afbeelding 1', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_002_switch',
-        'label'       => __( 'afbeelding 2 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_002',
-        'label'       => __( 'Slider afbeelding 2', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_003_switch',
-        'label'       => __( 'afbeelding 3 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_003',
-        'label'       => __( 'Slider afbeelding 3', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_004_switch',
-        'label'       => __( 'afbeelding 4 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_004',
-        'label'       => __( 'Slider afbeelding 4', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_005_switch',
-        'label'       => __( 'afbeelding 5 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_005',
-        'label'       => __( 'Slider afbeelding 5', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_006_switch',
-        'label'       => __( 'afbeelding 6 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_006',
-        'label'       => __( 'Slider afbeelding 6', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_007_switch',
-        'label'       => __( 'afbeelding 7 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_007',
-        'label'       => __( 'Slider afbeelding 7', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_008_switch',
-        'label'       => __( 'afbeelding 8 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_008',
-        'label'       => __( 'Slider afbeelding 8', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_009_switch',
-        'label'       => __( 'afbeelding 9 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_009',
-        'label'       => __( 'Slider afbeelding 9', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0010_switch',
-        'label'       => __( 'afbeelding 10 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0010',
-        'label'       => __( 'Slider afbeelding 10', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0011_switch',
-        'label'       => __( 'afbeelding 11 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0011',
-        'label'       => __( 'Slider afbeelding 11', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0012_switch',
-        'label'       => __( 'afbeelding 12 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0012',
-        'label'       => __( 'Slider afbeelding 12', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0013_switch',
-        'label'       => __( 'afbeelding 13 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0013',
-        'label'       => __( 'Slider afbeelding 13', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0014_switch',
-        'label'       => __( 'afbeelding 14 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0014',
-        'label'       => __( 'Slider afbeelding 14', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0015_switch',
-        'label'       => __( 'afbeelding 15 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0015',
-        'label'       => __( 'Slider afbeelding 16', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0016_switch',
-        'label'       => __( 'afbeelding 16 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0016',
-        'label'       => __( 'Slider afbeelding 16', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0017_switch',
-        'label'       => __( 'afbeelding 17 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0017',
-        'label'       => __( 'Slider afbeelding 17', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0018_switch',
-        'label'       => __( 'afbeelding 18 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0018',
-        'label'       => __( 'Slider afbeelding 18', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0019_switch',
-        'label'       => __( 'afbeelding 19 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0019',
-        'label'       => __( 'Slider afbeelding 19', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-    $fields[] = array(
-        'type'        => 'switch',
-        'settings'    => 'company_slider_logo_0020_switch',
-        'label'       => __( 'afbeelding 20 witte overlay', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '0',
-        'priority'    => 10,
-        'choices'     => array(
-            'on'  => __( 'Aan', 'kirki' ),
-            'off' => __( 'Uit', 'kirki' ),
-        ),
-    );
-    $fields[] = array(
-        'type'        => 'image',
-        'settings'    => 'company_slider_logo_0020',
-        'label'       => __( 'Slider afbeelding 20', 'kirki' ),
-        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
-        'section'     => 'company_slider_logo',
-        'default'     => '',
-        'priority'    => 10,
-    );
-
-
-
 
     $fields[] = array(
         'type'        => 'text',
@@ -1519,7 +1095,7 @@ function mytheme_kirki_fields( $fields ) {
         'setting'     => 'font_size',
         'label'       => __( 'Font-Size', 'kirki' ),
         'description' => __( 'Please choose a font-size for your body.', 'kirki' ),
-        'section'     => 'instellingen',
+        'section'     => 'typography',
         'default'     => 1,
         'priority'    => 20,
         'choices'     => array(
@@ -1527,7 +1103,8 @@ function mytheme_kirki_fields( $fields ) {
             'max'  => 2,
             'step' => .01
         ),
-        output        => array(
+
+        'output'       => array(
             array(
                 'element'  => 'body',
                 'property' => 'font-size',
@@ -1568,20 +1145,60 @@ function mytheme_kirki_fields( $fields ) {
         'label'       => esc_attr__( 'Repeater Control', 'kirki' ),
         'description' => esc_attr__( 'The "repeater" control allows you to create rows of data and you can define the fields that the rows will use. Valide field-types are: text, checkbox, radio, select, textarea. The data is saves as a multi-dimentional array.' ),
         'help'        => esc_attr__( 'This is a tooltip', 'kirki-demo' ),
-        'section'     => 'instellingen',
-        'priority'    => 10,
-        'settings'    => 'repeater_demo',
-
-        fields => array(
-            'link_text' => array(
-                'type'        => 'text',
-//                'settings'    => 'repeater_demo_text',
-                'label'       => __( 'Facebook url', 'kirki' ),
-                'help'        => __( 'https://www.facebook.com/StudioMares/', 'kirki' ),
+        'section'     => 'company_slider_logo',
+        'priority'    => 0,
+        'settings'    => 'company_slider_logo_image',
+        'default'     => array(
+            array(
+                'image_switch' => false,
+                'image_url'  => '',
+            ),
+            array(
+                'image_switch' => true,
+                'image_url'  => '',
+            ),
+        ),
+        'fields' => array(
+            'image_switch' => array(
+                'type'        => 'checkbox',
+                'label'       => __( 'afbeelding 1 witte overlay', 'kirki' ),
+                'description' => esc_attr__( 'Afbeelding krijgt witte overlay', 'kirki-demo' ),
+                'default'     => false,
+            ),
+            'image_url' => array(
+                'type'        => 'image',
+                'label'       => __( 'Slider afbeelding 1', 'kirki' ),
+                'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
                 'default'     => '',
             ),
         )
-    ) ;
+     );
+
+
+
+
+
+//    $fields[] = array(
+//        'type'        => 'switch',
+//        'settings'    => 'company_slider_logo_001_switch',
+//        'label'       => __( 'afbeelding 1 witte overlay', 'kirki' ),
+//        'section'     => 'company_slider_logo',
+//        'default'     => '0',
+//        'priority'    => 10,
+//        'choices'     => array(
+//            'on'  => __( 'Aan', 'kirki' ),
+//            'off' => __( 'Uit', 'kirki' ),
+//        ),
+//    );
+//    $fields[] = array(
+//        'type'        => 'image',
+//        'settings'    => 'company_slider_logo_001',
+//        'label'       => __( 'Slider afbeelding 1', 'kirki' ),
+//        'help'        => __( 'Logo plaatsen (standaard 500x500', 'kirki' ),
+//        'section'     => 'company_slider_logo',
+//        'default'     => '',
+//        'priority'    => 10,
+//    );
 
     return $fields;
 }
