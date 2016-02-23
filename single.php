@@ -14,8 +14,8 @@
                     <div class="row">
                         <div class="col-xs-12 text-center section-title">
                             <?php if ( ! have_posts() ) : ?>
-                                <h1><?php _e('Nothing found',arteshop); ?></h1>
-                                <p><?php _e('Sorry, we konden geen posts vinden.',arteshop); ?></p>
+                                <h1>Nothing found</h1>
+                                <p>Sorry, we konden geen posts vinden.</p>
                             <?php endif; ?>
                             <?php while ( have_posts() ) : the_post(); ?>
                                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -45,7 +45,6 @@
         </div>
     </div>
 </div>
-
 
 
 

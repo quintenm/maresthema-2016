@@ -7,7 +7,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -100,13 +100,6 @@ if ( ! class_exists( 'Kirki' ) ) {
 		 */
 		public static function add_field( $config_id, $args ) {
 			Kirki_Field::add_field( $config_id, $args );
-		}
-
-		/**
-		 * Find the config ID based on the field options
-		 */
-		public static function get_config_id( $field ) {
-			return Kirki_Field::get_config_id( $field );
 		}
 
 	}

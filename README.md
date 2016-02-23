@@ -23,6 +23,14 @@ onepage parallax with sub library articles
 
 ## other
 * quote optimalisation.
+* scroll, speed duration based on distance
+* bootstrap dropdown full width (not on front-page)
+
+## Bootstrap variables
+* [_variables.scss](scss/bootstrap/theme/_variables.scss)
+
+## Dump of database
+* no dump
 
 #future
 * optimalisation pages

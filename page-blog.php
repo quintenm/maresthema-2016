@@ -14,7 +14,7 @@
         $temp = $wp_query; $wp_query= null;
         $wp_query = new WP_Query(); $wp_query->query('showposts=5' . '&paged='.$paged);
         while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-                <div class="col-xs-12">
+                <div class="col-xs-12" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h2>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     </h2>

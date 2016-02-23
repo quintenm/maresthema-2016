@@ -4,7 +4,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
     die ('Please do not load this page directly. Thanks!');
 
 if ( post_password_required() ) { ?>
-    <p class="alert"><?php _e('Deze post is met een wachtwoord beveiligd. Voer je wachtwoord in om de reacties te zien.');?></p>
+    <p class="alert">Deze post is met een wachtwoord beveiligd. Voer je wachtwoord in om de reacties te zien.</p>
     <?php
     return;
 }
@@ -32,7 +32,7 @@ if ( post_password_required() ) { ?>
     <?php else : // comments zijn gesloten ?>
 
         <!-- Als de comments gesloten zijn -->
-        <p class="nocomments"><?php _e('Comments are closed.');?></p>
+        <p class="nocomments">Reacties zijn gesloten.</p>
 
     <?php endif; ?>
 
@@ -43,7 +43,7 @@ if ( post_password_required() ) { ?>
 
     <div id="respond">
 
-        <h3><?php comment_form_title( __('Laat een reactie achter'), __('Leave a Reply to %s') ); ?></h3>
+        <h3><?php comment_form_title( 'Laat een reactie achter', 'Leave a Reply to %s' ); ?></h3>
 
         <p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
 

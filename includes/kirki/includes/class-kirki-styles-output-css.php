@@ -6,7 +6,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
-	class Kirki_Styles_Output_CSS {
+	final class Kirki_Styles_Output_CSS {
 
 		public static $instance = null;
 
@@ -48,6 +48,8 @@ if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
 
 		/**
 		 * Get a single instance of this class
+		 *
+		 * @return object
 		 */
 		public static function get_instance() {
 			if ( null === self::$instance ) {
@@ -66,16 +68,12 @@ if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
 		 */
 		public static function css( $field ) {
 			/**
-			 * Make sure the field is sanitized before proceeding any further.
-			 */
-			$field_sanitized = Kirki_Field_Sanitize::sanitize_field( $field );
-			/**
 			 * Set class vars
 			 */
-			self::$settings   = $field_sanitized['settings'];
-			self::$callback   = $field_sanitized['sanitize_callback'];
-			self::$field_type = $field_sanitized['type'];
-			self::$output     = $field_sanitized['output'];
+			self::$settings   = $field['settings'];
+			self::$callback   = $field['sanitize_callback'];
+			self::$field_type = $field['type'];
+			self::$output     = $field['output'];
 			if ( ! is_array( self::$output ) ) {
 				self::$output = array(
 					array(
@@ -87,7 +85,7 @@ if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
 			/**
 			 * Get the value of this field
 			 */
-			self::$value = Kirki_Values::get_sanitized_field_value( $field_sanitized );
+			self::$value = Kirki_Values::get_sanitized_field_value( $field );
 			/**
 			 * Returns the styles
 			 */
@@ -219,7 +217,12 @@ if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
 						if ( Kirki()->font_registry->is_google_font( $value ) ) {
 							if ( isset( $google_fonts_array[ $value ] ) && isset( $google_fonts_array[ $value ]['category'] ) ) {
 								if ( isset( $backup_fonts[ $google_fonts_array[ $value ]['category'] ] ) ) {
-									$value .= ', ' . $backup_fonts[ $google_fonts_array[ $value ]['category'] ];
+									// add double quotes if needed
+									if ( false !== strpos( $value, ' ' ) && false === strpos( $value, '"' ) ) {
+										$value = '"' . $value . '", ' . $backup_fonts[ $google_fonts_array[ $value ]['category'] ];
+									} else {
+										$value .= ', ' . $backup_fonts[ $google_fonts_array[ $value ]['category'] ];
+									}
 								}
 							}
 						}
@@ -243,30 +246,28 @@ if ( ! class_exists( 'Kirki_Styles_Output_CSS' ) ) {
 							$styles[ $output['media_query'] ][ $element ]['text-decoration'] = 'strikethrough';
 						}
 						if ( isset( $value['font-family'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['font-family'] = $value['font-family'];
+							// add double quotes if needed
+							if ( false !== strpos( $value['font-family'], ' ' ) && false === strpos( $value['font-family'], '"' ) ) {
+								$styles[ $output['media_query'] ][ $element ]['font-family'] = '"' . $value['font-family'] . '"';
+							} else {
+								$styles[ $output['media_query'] ][ $element ]['font-family'] = $value['font-family'];
+							}
 							// Add backup font
 							if ( Kirki()->font_registry->is_google_font( $value['font-family'] ) ) {
 								if ( isset( $google_fonts_array[ $value['font-family'] ] ) && isset( $google_fonts_array[ $value['font-family'] ]['category'] ) ) {
 									if ( isset( $backup_fonts[ $google_fonts_array[ $value['font-family'] ]['category'] ] ) ) {
-										$styles[ $output['media_query'] ][ $element ]['font-family'] = $value['font-family'] . ', ' . $backup_fonts[ $google_fonts_array[ $value['font-family'] ]['category'] ];
+										// add double quotes if needed
+										if ( false !== strpos( $value['font-family'], ' ' ) && false === strpos( $value['font-family'], '"' ) ) {
+											$styles[ $output['media_query'] ][ $element ]['font-family'] = '"' . $value['font-family'] . '", ' . $backup_fonts[ $google_fonts_array[ $value['font-family'] ]['category'] ];
+										} else {
+											$styles[ $output['media_query'] ][ $element ]['font-family'] = $value['font-family'] . ', ' . $backup_fonts[ $google_fonts_array[ $value['font-family'] ]['category'] ];
+										}
 									}
 								}
 							}
 						}
-						if ( isset( $value['font-size'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['font-size'] = $value['font-size'];
-						}
-						if ( isset( $value['font-weight'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['font-weight'] = $value['font-weight'];
-						}
-						if ( isset( $value['line-height'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['line-height'] = $value['line-height'];
-						}
-						if ( isset( $value['letter-spacing'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['letter-spacing'] = $value['letter-spacing'];
-						}
-						if ( isset( $value['color'] ) ) {
-							$styles[ $output['media_query'] ][ $element ]['color'] = $value['color'];
+						foreach ( $value as $key => $sub_value ) {
+							$styles[ $output['media_query'] ][ $element ][ $key ] = $sub_value;
 						}
 					}
 					/**

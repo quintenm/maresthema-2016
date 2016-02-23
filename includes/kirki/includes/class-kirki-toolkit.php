@@ -5,7 +5,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 		/** @var Kirki The only instance of this class */
 		public static $instance = null;
 
-		public static $version = '2.0.8';
+		public static $version = '2.1.0.1';
 
 		public $font_registry = null;
 		public $scripts       = null;
@@ -92,11 +92,11 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 				'serif'                 => _x( 'Serif', 'font style', 'kirki' ),
 				'sans-serif'            => _x( 'Sans Serif', 'font style', 'kirki' ),
 				'monospace'             => _x( 'Monospace', 'font style', 'kirki' ),
-				'font-family'           => esc_attr__( 'Font Family', 'Kirki' ),
-				'font-size'             => esc_attr__( 'Font Size', 'Kirki' ),
-				'font-weight'           => esc_attr__( 'Font Weight', 'Kirki' ),
-				'line-height'           => esc_attr__( 'Line Height', 'Kirki' ),
-				'letter-spacing'        => esc_attr__( 'Letter Spacing', 'Kirki' ),
+				'font-family'           => esc_attr__( 'Font Family', 'kirki' ),
+				'font-size'             => esc_attr__( 'Font Size', 'kirki' ),
+				'font-weight'           => esc_attr__( 'Font Weight', 'kirki' ),
+				'line-height'           => esc_attr__( 'Line Height', 'kirki' ),
+				'letter-spacing'        => esc_attr__( 'Letter Spacing', 'kirki' ),
 				'top'                   => esc_attr__( 'Top', 'kirki' ),
 				'bottom'                => esc_attr__( 'Bottom', 'kirki' ),
 				'left'                  => esc_attr__( 'Left', 'kirki' ),
@@ -129,6 +129,13 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 		 * Constructor is private, should only be called by get_instance()
 		 */
 		private function __construct() {
+			$this->font_registry = new Kirki_Google_Fonts_Registry();
+			$this->api           = new Kirki();
+			$this->scripts       = new Kirki_Scripts_Registry();
+			$this->styles        = array(
+				'back'  => new Kirki_Styles_Customizer(),
+				'front' => new Kirki_Styles_Frontend(),
+			);
 		}
 
 		/**
@@ -138,19 +145,19 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 			return (bool) ( defined( 'KIRKI_DEBUG' ) && KIRKI_DEBUG );
 		}
 
-	    /**
-	     * Take a path and return it clean
-	     *
-	     * @param string $path
+		/**
+		 * Take a path and return it clean
+		 *
+		 * @param string $path
 		 * @return string
-	     */
-	    public static function clean_file_path( $path ) {
-	        $path = str_replace( '', '', str_replace( array( "\\", "\\\\" ), '/', $path ) );
-	        if ( '/' === $path[ strlen( $path ) - 1 ] ) {
-	            $path = rtrim( $path, '/' );
-	        }
-	        return $path;
-	    }
+		 */
+		public static function clean_file_path( $path ) {
+			$path = str_replace( '', '', str_replace( array( "\\", "\\\\" ), '/', $path ) );
+			if ( '/' === $path[ strlen( $path ) - 1 ] ) {
+				$path = rtrim( $path, '/' );
+			}
+			return $path;
+		}
 
 		/**
 		 * Determine if we're on a parent theme

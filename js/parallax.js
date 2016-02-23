@@ -131,7 +131,7 @@
       position: 'fixed',
       top: 0,
       left: 0,
-      overflow: 'hidden'
+      //overflow: 'hidden'
     });
 
     this.$slider.addClass('parallax-slider').one('load', function() {

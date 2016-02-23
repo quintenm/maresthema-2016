@@ -19,11 +19,24 @@
 
   &:not(.section-except)
   {
-    min-height: 40vh;
+    min-height: 50vh;
+  }
+  &.section-except
+  {
+    background-color: $body-bg;
+  }
+  &.header-items
+  {
+    padding-top:0;
+  }
+  &.contact-form
+  {
+    min-height:80vh;
   }
   &.footer
   {
     padding-bottom: 0;
+    min-height:100vh;
 
     .company-data
     {
@@ -35,7 +48,6 @@
     padding:0;
     z-index: 4;
     position: relative;
-    padding-top:60px;
     h1
     {
       margin-top:0;
@@ -64,6 +76,20 @@
   {
     background-color: lighten($gray-lighter, 4%);
   }
+  &.no-
+  {
+	  &padding-
+	  {
+		  &top
+		  {
+			  padding-top:0;
+		  }
+		  &bottom
+		  {
+			  padding-bottom: 0;
+		  }
+	  }
+  }
 }
 //offset for section-articles button
 .btn-offset
@@ -81,35 +107,94 @@
 {
   background-color: $panel-footer-bg;
 }
+$loops : 0;
+@function approximateSq($num, $approx) {
+  $root : (( $num / $approx ) + $approx) / 2;
+  @return $root;
+}
+
+@function sqrt($num) {
+  $root:0;
+  $testRoot : 0;
+  $upperBounds : round($num / 2) + 1; //never need over half the main number. Add one just to be sure!
+  $loops : $upperBounds;
+  @for $test from 2 through $upperBounds {
+    $sq : $test * $test;
+    @if $sq <= $num {
+      $testRoot : $test;
+    }
+  }
+
+  $root : (approximateSq($num, $testRoot));
+
+  @return $root;
+}
+
+
+
 .cutout
 {
-  position: relative;
   .cut {
+    width:100vw;
+    top:0;//-30px;
+    height:60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cut:before{
+
+    content:'';
     position:absolute;
-    top:-50px;
-    background-color: white;
-    z-index: 3;
-    height:120px;
+    -moz-transform: rotate(45deg) skew(-30deg, -30deg);
+    -o-transform: rotate(45deg) skew(-30deg, -30deg);
+    -webkit-transform: rotate(45deg) skew(-30deg, -30deg);
+    -ms-transform: rotate(45deg) skew(-30deg, -30deg);
+    transform: rotate(45deg) skew(-30deg, -30deg);
+    box-shadow: 0px 0px 0px 10000px $body-bg;
   }
-  .col-lg-12
+  .col-lg-12:before
   {
-    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 56% 0, 50% 30%, 44% 0);
-    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+    $vkntz : 10;
+    $offset : 50 - ( sqrt(($vkntz * $vkntz ) * 2 ) / 2 );
+    $vkd :  ($vkntz * $vkntz ) * 2 ;
+    top: #{sqrt($vkd) * -.65}vw;
+    left:#{$offset}vw;
+    right:#{$offset}vw;
+    width:#{sqrt($vkd)}vw;
+    height:#{sqrt($vkd)}vw;
   }
-  .col-md-12
+  .col-md-12:before
   {
-    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 56% 0, 50% 30%, 44% 0);
-    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+    $vkntz : 13;
+    $offset : 50 - ( sqrt(($vkntz * $vkntz ) * 2 ) / 2 );
+    $vkd :  ($vkntz * $vkntz ) * 2 ;
+    top: #{sqrt($vkd) * -.65}vw;
+    left:#{$offset}vw;
+    right:#{$offset}vw;
+    width:#{sqrt($vkd)}vw;
+    height:#{sqrt($vkd)}vw;
   }
-  .col-sm-12
+  .col-sm-12:before
   {
-    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 58% 0, 50% 30%, 42% 0);
-    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+    $vkntz : 16;
+    $offset : 50 - ( sqrt(($vkntz * $vkntz ) * 2 ) / 2 );
+    $vkd :  ($vkntz * $vkntz ) * 2 ;
+    top: #{sqrt($vkd) * -.65}vw;
+    left:#{$offset}vw;
+    right:#{$offset}vw;
+    width:#{sqrt($vkd)}vw;
+    height:#{sqrt($vkd)}vw;
   }
-  .col-xs-12
+  .col-xs-12:before
   {
-    -webkit-clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 60% 0, 50% 30%, 40% 0);
-    clip-path: polygon(0 0, 0 100%,100% 100%, 100% 0, 54% 0, 50% 80%, 46% 0);
+    $vkntz : 23;
+    $offset : 50 - ( sqrt(($vkntz * $vkntz ) * 2 ) / 2 );
+    $vkd :  ($vkntz * $vkntz ) * 2 ;
+    top: #{sqrt($vkd) * -.65}vw;
+    left:#{$offset}vw;
+    right:#{$offset}vw;
+    width:#{sqrt($vkd)}vw;
+    height:#{sqrt($vkd)}vw;
   }
 }
 
@@ -118,6 +203,9 @@
   background-color: $brand-primary;
   img.white_overlay {
     -webkit-filter: brightness(0) invert(1);
+    -moz-filter: brightness(0) invert(1);
+    -o-filter: brightness(0) invert(1);
+    -ms-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
   }
 }
@@ -291,13 +379,61 @@ a img.aligncenter {
 }
 .sticky
 {
-
+  font-size: 1em;
 }
 .gallery-caption
 {
-
+  font-size: 1em;
 }
 .bypostauthor
 {
+  font-size: 1em;
+}
 
+
+
+
+.full-width.dropdown {
+  position: static;
+}
+.full-width.dropdown > .dropdown-menu {
+  left: 0;
+  right: 0;
+  margin: auto;
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+  }
+  width:100%;
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+.full-width.dropdown > .dropdown-menu > li > a {
+  white-space: normal;
+}
+.full-width .dropdown-menu .dropdown-menu
+{
+  display: block;
+  position: static;
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar-nav
+{
+  margin:0;
+}
+@media (max-width: $screen-sm-min) {
+  .search {
+    margin-top: 40px;
+  }
+}
+.full-width > .dropdown-menu > .dropdown > a{
+  border-bottom: 2px solid black;
 }

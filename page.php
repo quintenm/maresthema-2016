@@ -1,31 +1,34 @@
-<?php
-    get_header();
+<?php get_header(); ?>
+<div class="section-articles" >
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 <?php  if ( is_active_sidebar( 'sidebar' ) ) { ?>col-md-8 col-lg-9<?php }else{ ?>col-md-12 col-lg-12<?php } ?>">
+                    <?php
+                    // Start the loop.
+                    while ( have_posts() ) : the_post();
 
-$postlist = get_posts( 'orderby=menu_order&sort_order=asc' );
-$posts = array();
-foreach ( $postlist as $post ) {
-    $posts[] += $post->ID;
-}
+                        // Include the page content template.
+                        get_template_part( 'content', 'page' );
 
-$current = array_search( get_the_ID(), $posts );
-$prevID = $posts[$current-1];
-$nextID = $posts[$current+1];
-?>
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
 
-<div class="navigation">
-    <?php if ( !empty( $prevID ) ): ?>
-        <div class="alignleft">
-            <a href="<?php echo get_permalink( $prevID ); ?>"
-               title="<?php echo get_the_title( $prevID ); ?>">Previous</a>
+                        // End the loop.
+                    endwhile;
+                    ?>
+                </div>
+                <?php  if ( is_active_sidebar( 'sidebar' ) ) : ?>
+                    <div class="col-sm-12 col-md-4 col-lg-3">
+                        <?php
+                            dynamic_sidebar( 'sidebar' );
+                        ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
-    <?php endif;
-    if ( !empty( $nextID ) ): ?>
-        <div class="alignright">
-            <a href="<?php echo get_permalink( $nextID ); ?>"
-               title="<?php echo get_the_title( $nextID ); ?>">Next</a>
-        </div>
-    <?php endif; ?>
-</div><!-- .navigation -->
-
-<?php // get_sidebar(); ?>
+    </div>
+</div>
 <?php get_footer(); ?>

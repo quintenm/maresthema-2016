@@ -122,6 +122,17 @@ wp.customize.controlConstructor['dimension'] = wp.customize.Control.extend( {
 	wp.customizerCtrlEditor.init();
 })( jQuery );
 /**
+ * KIRKI CONTROL: GENERIC
+ */
+wp.customize.controlConstructor['kirki-generic'] = wp.customize.Control.extend( {
+	ready: function() {
+		var control = this;
+		this.container.on( 'change keyup paste', control.params.choices.element, function() {
+			control.setting.set( jQuery( this ).val() );
+		});
+	}
+});
+/**
  * KIRKI CONTROL: MULTICHECK
  */
 wp.customize.controlConstructor['multicheck'] = wp.customize.Control.extend( {
@@ -155,12 +166,15 @@ wp.customize.controlConstructor['number'] = wp.customize.Control.extend( {
 		if ( control.params.choices.min ) {
 			jQuery( element ).spinner( 'option', 'min', control.params.choices.min );
 		}
-		if ( control.params.choices.min ) {
+		if ( control.params.choices.max ) {
 			jQuery( element ).spinner( 'option', 'max', control.params.choices.max );
 		}
-		if ( control.params.choices.min ) {
-			var control_step = ( 'any' == control.params.choises.step ) ? '0.001' : control.params.choices.step;
-			jQuery( element ).spinner( 'option', 'step', control_step );
+		if ( control.params.choices.step ) {
+			if ( 'any' == control.params.choices.step ) {
+				jQuery( element ).spinner( 'option', 'step', '0.001' );
+			} else {
+				jQuery( element ).spinner( 'option', 'step', control.params.choices.step );
+			}
 		}
 		// On change
 		this.container.on( 'change', 'input', function() {
@@ -347,24 +361,9 @@ wp.customize.controlConstructor['preset'] = wp.customize.Control.extend( {
 						 * Control types:
 						 *     color
 						 *     kirki-color
+						 *     color-alpha
 						 */
-						else if ( 'color' == sub_control_type || 'kirki-color' == sub_control_type ) {
-
-							/**
-							 * Update the value in the customizer object
-							 */
-							wp.customize.instance( preset_setting ).set( preset_setting_value );
-							/**
-							 * Update the value visually in the control
-							 */
-
-							wp.customize.control( preset_setting ).container.find( '.color-picker-hex' )
-								.attr( 'data-default-color', preset_setting_value )
-								.data( 'default-color', preset_setting_value )
-								.wpColorPicker( 'color', preset_setting_value );
-
-						}
-						else if ( 'color-alpha' == sub_control_type ) {
+						else if ( 'color-alpha' == sub_control_type || 'kirki-color' == sub_control_type || 'color' == sub_control_type ) {
 
 							/**
 							 * Update the value visually in the control
@@ -633,13 +632,13 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         this.container.on('click keypress', '.repeater-field-image .upload-button', function (e) {
             e.preventDefault();
             control.$thisButton = jQuery(this);
-            control.openFrame();
+            control.openFrame(e);
         });
 
         this.container.on('click keypress', '.repeater-field-image .remove-button', function (e) {
             e.preventDefault();
             control.$thisButton = jQuery(this);
-            control.removeImage();
+            control.removeImage(e);
         });
 
         /**
@@ -686,7 +685,7 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
     /**
      * Open the media modal.
      */
-    openFrame: function() {
+    openFrame: function( event ) {
         if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) return;
 
         if ( ! this.frame ) {
@@ -731,10 +730,10 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         $targetDiv.find('.remove-button').show();
 
         //This will activate the save button
-        $targetDiv.find('input, textarea').trigger('change');
+        $targetDiv.find('input, textarea, select').trigger('change');
     },
 
-    removeImage : function()
+    removeImage : function( event )
     {
         if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) return;
 
@@ -742,11 +741,13 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         var $uploadButton = $targetDiv.find('.upload-button');
 
         $targetDiv.find('.kirki-image-attachment').slideUp( 'fast', function(){
-            jQuery(this).html('');
+            jQuery(this).show().html( jQuery(this).data('placeholder') );
         });
         $targetDiv.find('.hidden-field').val('');
         $uploadButton.text($uploadButton.data('label'));
         this.$thisButton.hide();
+
+        $targetDiv.find('input, textarea, select').trigger('change');
     },
 
 
@@ -1220,28 +1221,6 @@ wp.customize.controlConstructor['switch'] = wp.customize.Control.extend( {
 		this.container.on( 'change', 'input', function() {
 			checkbox_value = ( jQuery( this ).is( ':checked' ) ) ? true : false;
 			control.setting.set( checkbox_value );
-		});
-	}
-});
-/**
- * KIRKI CONTROL: TEXT
- */
-wp.customize.controlConstructor['kirki-text'] = wp.customize.Control.extend( {
-	ready: function() {
-		var control = this;
-		this.container.on( 'change keyup paste', 'input', function() {
-			control.setting.set( jQuery( this ).val() );
-		});
-	}
-});
-/**
- * KIRKI CONTROL: TEXTAREA
- */
-wp.customize.controlConstructor['kirki-textarea'] = wp.customize.Control.extend( {
-	ready: function() {
-		var control = this;
-		this.container.on( 'change keyup paste', '.textarea', function() {
-			control.setting.set( jQuery( this ).val() );
 		});
 	}
 });

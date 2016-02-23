@@ -1,4 +1,4 @@
-<footer class="section footer">
+<footer class="section footer" id="footer">
     <div class="container">
         <div class="row">
                 <?php
@@ -8,6 +8,9 @@
                 if ( is_active_sidebar( 'footer_midden' ) ) :
                     dynamic_sidebar( 'footer_midden' );
                 endif;
+                if ( is_active_sidebar( 'footer_midden2' ) ) :
+                    dynamic_sidebar( 'footer_midden2' );
+                  endif;
                   if ( is_active_sidebar( 'footer_rechts' ) ) :
                     dynamic_sidebar( 'footer_rechts' );
                   endif;
@@ -17,12 +20,12 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <address>
-                        <?php echo html_entity_decode(get_theme_mod('instellingen_adress')); ?>
+                        <?php echo html_entity_decode(get_theme_mod('mt_instellingen_adress')); ?>
                     </address>
                 </div>
                 <?php
-                    $facebook_url = get_theme_mod('instellingen_fb');
-                    $twitter_url = get_theme_mod('instellingen_tw');
+                    $facebook_url = get_theme_mod('mt_instellingen_fb');
+                    $twitter_url = get_theme_mod('mt_instellingen_tw');
                     if($facebook_url || $twitter_url):
                 ?>
                 <div class="col-xs-12 col-md-6 text-right">
@@ -36,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <p class="text-center">Mares.be © 2016 — Disclamer — Policy</p>
+                <p class="text-center">Mares.be &copy; 2016 — Disclamer — Policy</p>
             </div>
         </div>
     </div>

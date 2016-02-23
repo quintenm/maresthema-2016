@@ -5,7 +5,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -40,10 +40,6 @@ if ( ! class_exists( 'Kirki_Google_Fonts_Scripts' ) ) {
 			 * Run a loop for our fields
 			 */
 			foreach ( $fields as $field ) {
-				/**
-				 * Sanitize the field
-				 */
-				$field = Kirki_Field_Sanitize::sanitize_field( $field );
 				/**
 				 * No reason to proceed any further if no 'output' has been defined
 				 * or if it's not defined as an array.
@@ -80,8 +76,8 @@ if ( ! class_exists( 'Kirki_Google_Fonts_Scripts' ) ) {
 					}
 
 					/**
-			 		 * Get the value of this field
-			 		 */
+					 * Get the value of this field
+					 */
 			 		$value = Kirki_Values::get_sanitized_field_value( $field );
 					/**
 					 * Typography fields arew a bit more complex than usual fields.

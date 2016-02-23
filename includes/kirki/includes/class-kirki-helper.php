@@ -5,7 +5,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -25,7 +25,8 @@ if ( ! class_exists( 'Kirki_Helper' ) ) {
 			if ( ! is_array( $array ) ) {
 				return $array;
 			}
-			for ( $i = 1; $i < count( $args ); $i++ ) {
+			$count = count( $args );
+			for ( $i = 1; $i < $count; $i++ ) {
 				if ( is_array( $args[ $i ] ) ) {
 					$array = self::recurse( $array, $args[ $i ] );
 				}

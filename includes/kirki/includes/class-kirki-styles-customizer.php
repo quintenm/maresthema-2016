@@ -8,7 +8,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 					'jquery-ui-sortable',
 					'codemirror',
 					'jquery-ui-spinner',
-					'selectize'
+					'selectize',
 				);
 
 				wp_enqueue_script( 'kirki-customizer-js', trailingslashit( Kirki::$url ) . 'assets/js/customizer' . $suffix . '.js', $deps, Kirki_Toolkit::$version );
@@ -84,6 +84,10 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 		 * its main JS file (not dependencies like jQuery or jQuery UI).
 		 *
 		 * These files are only enqueued when debugging Kirki
+		 *
+		 * @param string $handle
+		 * @param string $file
+		 * @param array  $deps
 		 */
 		public static function enqueue_customizer_control_script( $handle, $file = null, $deps = array(), $in_footer = false ) {
 			if ( ( false !== strpos( $file, 'controls/' ) && Kirki_Toolkit::kirki_debug() ) || false === strpos( $file, 'controls/' ) ) {
@@ -137,6 +141,9 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 
 		}
 
+		/**
+		 * @param string $styles
+		 */
 		public function replace_placeholders( $styles ) {
 			/**
 			 * replace CSS placeholders with actual values

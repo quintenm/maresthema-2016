@@ -18,20 +18,18 @@ if ( ! class_exists( 'Kirki_Control' ) ) {
 			'number'           => 'Kirki_Controls_Number_Control',
 			'palette'          => 'Kirki_Controls_Palette_Control',
 			'preset'           => 'Kirki_Controls_Preset_Control',
-			'radio'            => 'Kirki_Controls_Radio_Control',
+			'kirki-radio'      => 'Kirki_Controls_Radio_Control',
 			'radio-buttonset'  => 'Kirki_Controls_Radio_ButtonSet_Control',
 			'radio-image'      => 'Kirki_Controls_Radio_Image_Control',
 			'repeater'         => 'Kirki_Controls_Repeater_Control',
-			'select'           => 'Kirki_Controls_Select_Control',
+			'kirki-select'     => 'Kirki_Controls_Select_Control',
 			'slider'           => 'Kirki_Controls_Slider_Control',
 			'sortable'         => 'Kirki_Controls_Sortable_Control',
 			'spacing'          => 'Kirki_Controls_Spacing_Control',
 			'switch'           => 'Kirki_Controls_Switch_Control',
-			'text'             => 'Kirki_Controls_Text_Control',
-			'textarea'         => 'Kirki_Controls_Textarea_Control',
+			'kirki-generic'    => 'Kirki_Controls_Generic_Control',
 			'toggle'           => 'Kirki_Controls_Toggle_Control',
 			'typography'       => 'Kirki_Controls_Typography_Control',
-			'color'            => 'WP_Customize_Color_Control',
 			'image'            => 'WP_Customize_Image_Control',
 			'upload'           => 'WP_Customize_Upload_Control',
 		);
@@ -99,7 +97,7 @@ if ( ! class_exists( 'Kirki_Control' ) ) {
 			$this->wp_customize->add_control( new $control_class_name(
 				$this->wp_customize,
 				$args['settings'],
-				Kirki_Field_Sanitize::sanitize_field( $args )
+				$args
 			) );
 
 		}

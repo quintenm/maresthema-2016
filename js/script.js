@@ -7,15 +7,15 @@
 
 
 
-    $("#nav ul li a[href^='#']").on('click', function(e) {
+    $("#nav ul li a[href^='#'],.scrollToSection").on('click', function(e) {
 
         // prevent default anchor click behavior
-        e.preventDefault();
+        //e.preventDefault();
 
         // animate
         $('html, body').animate({
             scrollTop: $(this.hash).offset().top
-        }, 1000, function(){
+        },  Math.abs(window.scrollY - $(this.hash).offset().top) * 2, function(){
 
             // when done, add hash to url
             // (default click behaviour)
@@ -23,7 +23,6 @@
         });
 
     });
-
 
     $('.carousel-showsixmoveone .item').each(function(){
         var itemToClone = $(this);

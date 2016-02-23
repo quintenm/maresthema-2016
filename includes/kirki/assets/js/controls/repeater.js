@@ -115,13 +115,13 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         this.container.on('click keypress', '.repeater-field-image .upload-button', function (e) {
             e.preventDefault();
             control.$thisButton = jQuery(this);
-            control.openFrame();
+            control.openFrame(e);
         });
 
         this.container.on('click keypress', '.repeater-field-image .remove-button', function (e) {
             e.preventDefault();
             control.$thisButton = jQuery(this);
-            control.removeImage();
+            control.removeImage(e);
         });
 
         /**
@@ -168,7 +168,7 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
     /**
      * Open the media modal.
      */
-    openFrame: function() {
+    openFrame: function( event ) {
         if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) return;
 
         if ( ! this.frame ) {
@@ -213,10 +213,10 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         $targetDiv.find('.remove-button').show();
 
         //This will activate the save button
-        $targetDiv.find('input, textarea').trigger('change');
+        $targetDiv.find('input, textarea, select').trigger('change');
     },
 
-    removeImage : function()
+    removeImage : function( event )
     {
         if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) return;
 
@@ -224,11 +224,13 @@ wp.customize.controlConstructor['repeater'] = wp.customize.Control.extend({
         var $uploadButton = $targetDiv.find('.upload-button');
 
         $targetDiv.find('.kirki-image-attachment').slideUp( 'fast', function(){
-            jQuery(this).html('');
+            jQuery(this).show().html( jQuery(this).data('placeholder') );
         });
         $targetDiv.find('.hidden-field').val('');
         $uploadButton.text($uploadButton.data('label'));
         this.$thisButton.hide();
+
+        $targetDiv.find('input, textarea, select').trigger('change');
     },
 
 

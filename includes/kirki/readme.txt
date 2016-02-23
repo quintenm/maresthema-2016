@@ -4,7 +4,7 @@ Tags: customizer,options framework, theme, mods, toolkit
 Donate link: http://kirki.org/
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 2.0.8
+Stable tag: 2.1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,14 +13,14 @@ The ultimate toolkit for theme developers using the WordPress Customizer
 
 == Description ==
 
+[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![codecov.io](https://codecov.io/github/aristath/kirki/coverage.svg?branch=master)](https://codecov.io/github/aristath/kirki?branch=master) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Kirki is not a framework. It's a Toolkit allowing WordPress developers to use the Customizer and take advantage of its advanced features and flexibility by abstracting the code and making it easier for everyone to create beautiful and meaningful user experiences.
 
 It does not replace the WordPress Customizer API, you can still use the default WordPress methods and we advise you to familiarize yourselves with them.
 An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/advanced-topics/customizer-api/) website.
 
 What Kirki does is save you time... LOTS of time!
-
-[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![Coverage Status](https://coveralls.io/repos/aristath/kirki/badge.svg?branch=master)](https://coveralls.io/r/aristath/kirki?branch=master) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **Configurations**
 
@@ -118,6 +118,57 @@ Please visit https://github.com/aristath/kirki/wiki/Embedding-in-a-theme for doc
 To get an idea on how to include Kirki in your next project, you can take a look at the [Ornea theme](https://github.com/aristath/ornea) or use our test theme from https://github.com/aristath/kirki-demo.
 
 == Changelog ==
+
+= 2.2.0 =
+WIP
+
+* FIX: Improved & simplified the `number` control.
+* FIX: Improved & simplified the `spacing` control.
+* FIX: Minor bugfix on the `select` control.
+* FIX: Improved & simplified the `typography` control.
+* FIX: WP Coding standards improvements.
+* FIX: Bugfix for radio controls.
+* FIX: Fixed repeater remove image not triggering save button to activate, and added a placeholder when the image is removed. (props @sayedwp)
+* FIX: Fixed bug when using negative numbers as min value in the `number` field
+* FIX: Typo in the textdomain for some strings (some strings were using "Kirki" instead of "kirki").
+* NEW: Deprecated the `Kirki_Field_Sanitize` class in favor of a more simplified & robust implementation.
+* NEW: Deprecated the `Kirki_Field::get_config_id()` method. It's no longer needed since fields have a `kirki_config` argument.
+* NEW: Added a new `kirki-generic` control.
+* NEW: Deprecated the custom text control and used the new `kirki-generic` control instead.
+* NEW: Deprecated the custom textarea control and used the new `kirki-generic` control instead.
+* NEW: Renamed the `help` argument to `tooltip`. `help` will continue to work as an alias.
+* NEW: Merged the `color` & color-alpha` controls. We now use the `color-alpha` control for all colors, and just modify the `data-alpha` property it has.
+* NEW: Updated `grunt` packages
+* NEW: Started rewriting the PHPUNIT tests & tweaked them so they can now run on localhosts (like VVV) and not just on travis-ci.
+* NEW: Started using the `Jetpack_Color` library in `Kirki_Color` methods.
+
+
+
+= 2.1.0.1 =
+
+February 17, 2016, dev time: 5 minutes
+
+* FIX: PHP Notices (undefined index)
+
+= 2.1.0 =
+
+February 17, 2016, dev time: 4 hours
+
+* FIX: Image field issues inside the Repeater field (props @sayedwp)
+* NEW: Allow disabling output per-config
+* NEW: Introduce 'postMessage' => 'auto' option in config (will auto-create `js_vars` using the `output` argument)
+* NEW: New color control using a js-based template
+* TWEAK: Branding script rewrite
+* TWEAK: Color controls styling
+* TWEAK: Coding improvements & cleanups
+
+= 2.0.9 =
+
+February 13, 2016, dev time: 1 hour.
+
+* FIX: Google fonts bug (use double quotes when font name contains a space character)
+* FIX: Checkbox control bug (checkboxes were always displayed as checked, regardless of their actual value)
+* NEW: Intruducing KIRKI_NO_OUTPUT constant that disables CSS output completely when set to true.
 
 = 2.0.8 =
 
