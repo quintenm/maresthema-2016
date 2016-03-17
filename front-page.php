@@ -1,10 +1,6 @@
 <?php
     get_header();
-//if ( 'posts' == get_option('mt_show_on_front' ) ) {
-//    include( get_home_template() );
-//} else {
-//    // Custom content markup goes here
-//}
+    $img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'medium' );
 ?>
 <?php if(get_theme_mod('mt_header_image')){ ?>
 <div>
@@ -200,7 +196,7 @@
     </div>
 </div>
 <?php if(get_theme_mod('header_sub_site_item_switch') == "1"): ?>
-<div class="section section-except no-padding-top">
+<div class="section section-except no-padding-top headersubpage">
     <div class="container">
         <?php
             $pagenumber = get_theme_mod('header_sub_site_item_pagina_id');
@@ -285,7 +281,7 @@
                      ?>
                 </div>
                 <div class="row btn-offset">
-                    <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 text-center">
                         <a href="<?php echo get_theme_mod('mt_hightlighted_article_area_01_url'); ?>" class="btn btn-default"><?php echo get_theme_mod('mt_hightlighted_article_area_01_button'); ?></a>
                     </div>
                 </div>
@@ -302,7 +298,7 @@
                      ?>
                 </div>
                 <div class="row btn-offset">
-                    <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 text-center">
                         <a href="<?php echo get_theme_mod('mt_hightlighted_article_area_02_url'); ?>" class="btn btn-default"><?php echo get_theme_mod('mt_hightlighted_article_area_02_button'); ?></a>
                     </div>
                 </div>
@@ -319,7 +315,7 @@
                      ?>
                 </div>
                 <div class="row btn-offset">
-                    <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 text-center">
                         <a href="<?php echo get_theme_mod('mt_hightlighted_article_area_03_url'); ?>" class="btn btn-default"><?php echo get_theme_mod('mt_hightlighted_article_area_03_button'); ?></a>
                     </div>
                 </div>
@@ -336,7 +332,7 @@
                      ?>
                 </div>
                 <div class="row btn-offset">
-                    <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 text-center">
                         <a href="<?php echo get_theme_mod('mt_hightlighted_article_area_04_url'); ?>" class="btn btn-default"><?php echo get_theme_mod('mt_hightlighted_article_area_04_button'); ?></a>
                     </div>
                 </div>

@@ -151,6 +151,11 @@ function mytheme_kirki_sections( $wp_customize ) {
         'priority'    => 230,
     ) );
 
+    $wp_customize->add_section( 'meldingen', array(
+        'title'       => __( 'Meldingen', 'kirki' ),
+        'priority'    => 225,
+    ) );
+
 }
 add_action( 'customize_register', 'mytheme_kirki_sections' );
 
@@ -1199,6 +1204,63 @@ function mytheme_kirki_fields( $fields ) {
             ),
         )
      );
+
+
+    $fields[] = array(
+        'type'        => 'repeater',
+        'label'       => esc_attr__( 'Meldingen', 'kirki' ),
+        'section'     => 'meldingen',
+        'priority'    => 1,
+        'settings'    => 'meldingen_loop',
+        'fields' => array(
+            'alert_switch' => array(
+                'type'        => 'checkbox',
+                'description' => 'Melding is zichtbaar',
+                'default'     => false
+            ),
+            'alert_type' => array(
+                'label'       => 'Type alert',
+                'type'        => 'select',
+                'description' => 'kleur/type veranderen',
+                'default'     => 'success',
+                'choices'     => array(
+                    'success' => 'success (groen)',
+                    'info' => 'info (blauw)',
+                    'warning' => 'warning (geel)',
+                    'danger' => 'danger (rood)'
+                )
+            ),
+            'alert_text01_checkbox' => array(
+                'type'        => 'checkbox',
+                'description' => 'Vette tekst is zichtbaar',
+                'default'     => false
+            ),
+            'alert_text01' => array(
+                'type'        => 'text',
+                'label'       => 'Inhoud vette tekst',
+                'description' => 'dit is een stuk vette tekst',
+            ),
+            'alert_text02' => array(
+                'type'        => 'textarea',
+                'label'       => 'Inhoud melding tekst',
+                'description' => 'dit is de tekst met de melding',
+            ),
+            'alert_switch_close' => array(
+                'type'        => 'checkbox',
+                'description' => 'Melding is wegklikbaar',
+                'help'        => 'blijft weg gedurende de levensduur',
+                'default'     => false
+            ),
+            'alert_cookie_id' => array(
+                'type'        => 'text',
+                'description' => 'geef speciaal id voor cookie',
+            ),
+            'alert_cookie_duration' => array(
+                'type'        => 'text',
+                'description' => 'levensduur van cookie (in dagen uitgedrukt)',
+            ),
+        )
+    );
 
     return $fields;
 }

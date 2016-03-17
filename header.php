@@ -105,3 +105,27 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<?php
+    $repeater_value = get_theme_mod('meldingen_loop');
+    $count= 1;
+    foreach ( $repeater_value as $row ) : ?>
+        <?php if($row['alert_switch']== true):
+            $cookieId = "mares-alert-box-" . $row['alert_cookie_id'];
+
+            if(!isset($_COOKIE[$cookieId])): ?>
+                <div class="alert alert-<?php echo $count ++; ?> alert-<?php print $row['alert_type']; ?> alert-fixed-top" data-alert-id="<?php print $row['alert_cookie_id']; ?>" data-alert-time="<?php print $row['alert_cookie_duration']; ?>" role="alert">
+                    <?php if($row['alert_switch_close']== true): ?>
+                      <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+                    <?php endif; ?>
+                    <?php if($row['alert_text01_checkbox']==true): ?><strong><?php print $row['alert_text01']; ?></strong><?php endif; print $row['alert_text02']; ?>
+                </div>
+        <?php
+            elseif(isset($_COOKIE[$cookieId])):
+                $cookieId = "mares-alert-box-" . $row['alert_cookie_id'];
+                console.log($cookieId);
+                $new_time = time() + (86400 * $row['alert_cookie_duration']);
+                setcookie($cookieId, 'closed', $new_time, '/');
+            endif;
+            endif;
+            endforeach;
+        ?>

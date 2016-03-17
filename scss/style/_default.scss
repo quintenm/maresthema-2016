@@ -74,7 +74,7 @@
   }
   &-articles .section:nth-of-type(even)
   {
-    background-color: lighten($gray-lighter, 4%);
+    background-color: $panel-footer-bg;
   }
   &.no-
   {
@@ -436,4 +436,16 @@ a img.aligncenter {
 }
 .full-width > .dropdown-menu > .dropdown > a{
   border-bottom: 2px solid black;
+}
+@media (max-width: $screen-sm-min) {
+  img.size-full {
+    max-width: 100vw!important;
+    max-height: auto!important;
+  }
+}
+.widget img,
+.headersubpage img
+{
+  width:100%;
+  height: auto;
 }

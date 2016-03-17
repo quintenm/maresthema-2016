@@ -10,17 +10,11 @@
     $("#nav ul li a[href^='#'],.scrollToSection").on('click', function(e) {
 
         // prevent default anchor click behavior
-        //e.preventDefault();
-
+        e.preventDefault();
         // animate
         $('html, body').animate({
-            scrollTop: $(this.hash).offset().top
-        },  Math.abs(window.scrollY - $(this.hash).offset().top) * 2, function(){
-
-            // when done, add hash to url
-            // (default click behaviour)
-            //window.location.hash = this.hash;
-        });
+            scrollTop: $(this.hash).offset().top()
+        },  Math.abs((window.scrollY - $(this.hash).offset().top()) * 0.3));
 
     });
 
@@ -43,7 +37,28 @@
     });
 
 
+    /*
+    close alerts with cookeis
+     */
+    $('.close').click(function( e ){
+        e.preventDefault();
+        var alertPath = $(this).closest('.alert');
+        var alert_id_prefix = 'mares-alert-box-';
+        var alert_id = alertPath.data("alert-id");
+        var alert_duration = alertPath.data("alert-time");
+        alert_id =  alert_id_prefix.concat(alert_id);
+        // Do not perform default action when button is clicked
+
+        /* If you just want the cookie for a session don't provide an expires
+         Set the path as root, so the cookie will be valid across the whole site */
+        $.cookie(alert_id, 'closed', {expires : alert_duration, path : '/'});
+    });
 
 
+    /*
+    Call dropdown menu on hover
+     */
+
+    $('[data-toggle="dropdown"]').bootstrapDropdownHover();
 
 }(jQuery, window, document));
