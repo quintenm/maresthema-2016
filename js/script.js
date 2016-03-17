@@ -13,8 +13,13 @@
         e.preventDefault();
         // animate
         $('html, body').animate({
-            scrollTop: $(this.hash).offset().top()
-        },  Math.abs((window.scrollY - $(this.hash).offset().top()) * 0.3));
+            scrollTop: $(this.hash).offset().top
+        },  Math.abs((window.scrollY - $(this.hash).offset().top) *.3), function(){
+
+            // when done, add hash to url
+            // (default click behaviour)
+            //window.location.hash = this.hash;
+        });
 
     });
 
@@ -54,9 +59,8 @@
         $.cookie(alert_id, 'closed', {expires : alert_duration, path : '/'});
     });
 
-
     /*
-    Call dropdown menu on hover
+     Call dropdown menu on hover
      */
 
     $('[data-toggle="dropdown"]').bootstrapDropdownHover();
